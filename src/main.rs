@@ -7,17 +7,17 @@ fn main() {
 
     args.remove(0);
 
-    let pos_help = args.iter().position(|n| n == "--help" || n == "-h").unwrap_or(usize::MAX);
-    let pos_version = args.iter().position(|n| n == "--version" || n == "-V").unwrap_or(usize::MAX);
+    let pos_help = args.iter().position(|n| n == "--help").unwrap_or(usize::MAX);
+    let pos_version = args.iter().position(|n| n == "--version").unwrap_or(usize::MAX);
 
     if pos_help < pos_version {
         println!("Outputs the string provided in the arguments forever. If no string is given, outputs 'y' repeatedly.");
-        println!("For version information, invoke with --version or -V.");
+        println!("For version information, invoke with --version.");
         return;
     }
 
     if pos_help > pos_version {
-        println!("yes v0.5 (Mojavesoft implementation); should be compatible with GNU yes v9.5 and uutils yes 0.2.2");
+        println!("yes v0.4 (Mojavesoft implementation); should be compatible with GNU yes v9.5 and uutils yes 0.2.2");
         println!("Copyright January 2026.");
         return;
     }
