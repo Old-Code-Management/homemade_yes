@@ -1,7 +1,7 @@
 # homemade_yes
 High-performance reimplementation of GNU yes, but made at home in Rust.
 
-I accidentally leaked personal info in the previous `homemade_yes` repository, so this one is a recreated version with the latest updates.
+As I am not very good at writing in Rust, I probably made a lot of subtle mistakes; please submit a PR if you find anything!
 
 The entire codebase is 25 lines long, excluding comments and empty lines. Compare this to the [uutils implementation](https://github.com/uutils/coreutils/blob/main/src/uu/yes/src/yes.rs), which has ~161 lines of actual code.
 
@@ -17,8 +17,6 @@ Here are some test results from my build machine, which runs Ubuntu 25.10:
 | uutils yes 0.2.2 |5.65GiB/s|5.62GiB/s |
 | homemade_yes 0.3 | 5.09GiB/s    | 5.24GiB/s|
 | homemade_yes 0.4   | 5.61Gib/s    |5.62GiB/s |
-
-`homemade_yes` 0.5 was not tested because it doesn't provide any performance improvements.
 
 ## Traditional version
 I have also written a more traditional version of `yes` at `src/bin/posix-only.rs`. This version does not include the `--version` and `--help` arguments, simplifying the code massively.
