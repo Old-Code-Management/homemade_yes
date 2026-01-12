@@ -1,17 +1,6 @@
 # homemade_yes
 High-performance reimplementation of GNU yes, but made at home in Rust.
 
-As I am not very good at writing in Rust, I probably made a lot of subtle mistakes; please submit a PR if you find anything!
+You can benchmark it by running `./homemade_yes | pv -N "Homemade yes" -r -t > /dev/null`.
 
-The entire codebase is 25 lines long, excluding comments and empty lines. Compare this to the [uutils implementation](https://github.com/uutils/coreutils/blob/main/src/uu/yes/src/yes.rs), which has ~161 lines of actual code.
-
-## Benchmarking
-
-You can benchmark `homemade_yes` by running `./homemade_yes | pv -N "Homemade yes" -r -t > /dev/null`.
-
-On my build machine, it can obtain a throughput of about ~3.5 gigabytes per second, which is comparable to GNU yes (v9.5). On a nice laptop from the past ~5 years and Xubuntu 25.04, I was able to achieve ~4.2 gigabytes per second, whereas GNU yes usually hovered around ~4.0 gigabytes per second. 
-
-## POSIX-only version
-I have also written a POSIX version of `yes` at `src/bin/posix-only.rs`. This version does not include the `--version` and `--help` arguments, simplifying the code massively.
-
-In all other respects, it should act roughly identical to the GNU implementation from `src/main.rs`. If it doesn't, please file an issue so that I can fix it.
+On my build machine, `homemade_yes` can obtain a throughput of about ~3.5 gigabytes per second, which is comparable to GNU yes (v9.5). I'm pretty sure that my hardware is bottlenecking performance at this point, so better throughputs might be possible with some hardware tweaking.
